@@ -1,0 +1,11 @@
+{
+  "name": "akou",
+  "owner": { "name": "iliasdmtrp" },
+  "plugins": [
+    {
+      "name": "akou",
+      "source": "./akou",
+      "description": "Προσβάσιμος φωνητικός βοηθός για τυφλούς στο Claude Code — μιλάς, στέλνεται, ακούς την απάντηση (ελληνικά)."
+    }
+  ]
+}

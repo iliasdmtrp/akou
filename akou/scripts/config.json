@@ -1,0 +1,14 @@
+{
+  "key": "f9",
+  "mode": "ptt",
+  "language": "el",
+  "model": "whisper-large-v3",
+  "beep": true,
+  "auto_paste": true,
+  "auto_submit": true,
+  "speak_responses": true,
+  "tts_voice": "el-GR-AthinaNeural",
+  "tts_max_chars": 1200,
+  "lead_trim_sec": 0.18,
+  "tail_wait_sec": 0.25
+}

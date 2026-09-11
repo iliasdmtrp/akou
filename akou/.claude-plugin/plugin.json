@@ -1,0 +1,12 @@
+{
+  "name": "akou",
+  "version": "0.1.0",
+  "description": "akou (άκου) — προσβάσιμος φωνητικός βοηθός για τυφλούς στο Claude Code: μιλάς την εντολή στα ελληνικά, στέλνεται αυτόματα, και η απάντηση διαβάζεται φωναχτά. STT: Groq/OpenAI Whisper · TTS: edge-tts.",
+  "author": { "name": "iliasdmtrp" },
+  "commands": [
+    "./commands/akou.md",
+    "./commands/akou-stop.md",
+    "./commands/akou-config.md"
+  ],
+  "hooks": "./hooks/hooks.json"
+}
