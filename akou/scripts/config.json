@@ -7,6 +7,7 @@
   "auto_paste": true,
   "auto_submit": true,
   "speak_responses": true,
+  "startup_announce": true,
   "tts_voice": "el-GR-AthinaNeural",
   "tts_max_chars": 1200,
   "lead_trim_sec": 0.18,

@@ -51,6 +51,7 @@ DEFAULT_CONFIG = {
     "auto_paste": True,
     "auto_submit": True,        # μετά το paste πάτα Enter (hands-free) — προεπιλογή ON για akou
     "speak_responses": True,    # διάβασε φωναχτά τις απαντήσεις (Stop hook) — ON για akou
+    "startup_announce": True,   # φωνητικός χαιρετισμός στην εκκίνηση
     "tts_voice": "el-GR-AthinaNeural",
     "tts_max_chars": 1200,
     "lead_trim_sec": 0.18,

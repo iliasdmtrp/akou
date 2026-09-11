@@ -128,6 +128,22 @@ def _stop_and_type():
             pass
 
 
+def _announce(text, voice):
+    """Εκφωνεί ένα σύντομο μήνυμα (π.χ. χαιρετισμό εκκίνησης) μέσω edge-tts."""
+    try:
+        import asyncio, os, tempfile
+        import speak_response as sr
+        out = os.path.join(tempfile.gettempdir(), "akou_announce.mp3")
+        asyncio.run(sr._tts(text, voice, out))
+        sr._play_mp3(out)
+        try:
+            os.remove(out)
+        except OSError:
+            pass
+    except Exception as e:
+        print(f"announce error: {e}", file=sys.stderr)
+
+
 def _toggle():
     with _lock:
         _start() if not _recording else _stop_and_type()
@@ -177,6 +193,16 @@ def main():
     lang = cfg.get("language", "el")
     print(f"🎙️  Έτοιμο [{mode}, γλώσσα={lang}]. Κέρσορας στο chat, {how}. "
           f"(Esc για έξοδο.)", flush=True)
+
+    # Φωνητικός χαιρετισμός εκκίνησης — ώστε ένας τυφλός χρήστης να ξέρει ακουστικά
+    # ότι το akou είναι έτοιμο.
+    if cfg.get("startup_announce", True):
+        _announce(cfg.get(
+            "startup_message",
+            f"Το άκου είναι έτοιμο. Κράτα το πλήκτρο, πες την εντολή σου, "
+            f"και θα ακούσεις την απάντηση."
+        ), cfg.get("tts_voice", "el-GR-AthinaNeural"))
+
     keyboard.wait("esc", suppress=False)
 
 
